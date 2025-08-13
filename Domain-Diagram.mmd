@@ -1,0 +1,30 @@
+---
+title: Diagrama Domínio Banco
+---
+classDiagram
+    Usuario <--Conta
+    Conta<--Transacao
+    TipoConta<--Conta
+    TipoTransacao<--Transacao
+    class Usuario{
+        +String cpf
+        +String nome
+    }
+    class Conta{
+        -String numeroConta
+        -Double saldo
+
+    }
+    class Transacao{
+        +LocalDateTime dataTransacao
+        +Double saldoAposTransacao
+    }
+    class TipoTransacao{
+        -String DEPOSITO
+        -String SAQUE
+    }
+
+    class TipoConta{
+        -String SIMPLES
+        -String ESPECIAL
+    }
